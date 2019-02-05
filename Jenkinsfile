@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd public/assets/ && bower install && cd ../.. && grunt build'
+                sh 'cd public/assets/ && bower install && cd ../.. && grunt test'
             }
         }
     }
