@@ -7,7 +7,6 @@ pipeline {
             agent {
                 docker {
                     image 'node:10'
-                    args '--tmpfs /.config'
                 }
             }
             steps {
