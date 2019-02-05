@@ -11,6 +11,7 @@ pipeline {
                 }
             }
             steps {
+                sh 'echo Debut'
                 sh 'sudo -u node npm install'
                 sh 'sudo -u node npm run build'
                 sh 'sudo -u node npm test'
