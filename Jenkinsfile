@@ -7,7 +7,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:10'
-                    args '-u jenkins'
+                    args '-u root:sudo'
                 }
             }
             steps {
