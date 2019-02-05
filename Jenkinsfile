@@ -5,10 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
-                sh 'npm test'
-                stash name: 'dist', includes: 'dist/'
+                sh 'cd public/assets/ && bower install && cd ../.. && grunt build'
             }
         }
     }
