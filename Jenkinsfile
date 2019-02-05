@@ -5,9 +5,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sudo -u root npm install'
-                sh 'sudo -u root npm run build'
-                sh 'sudo -u root npm test'
+                sh 'npm install'
+                sh 'npm run build'
+                sh 'npm test'
                 stash name: 'dist', includes: 'dist/'
             }
         }
