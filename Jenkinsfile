@@ -10,9 +10,10 @@ pipeline {
                 }
             }
             steps {
-                sh 'npm install'
-                sh 'npm run build'
-                sh 'npm test'
+                sh 'apt update && apt install -y sudo'
+                sh 'sudo -u node npm install'
+                sh 'sudo -u node npm run build'
+                sh 'sudo -u node npm test'
                 stash name: 'dist', includes: 'dist/'
             }
         }
